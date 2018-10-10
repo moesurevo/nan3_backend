@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Repositories\Question\QuestionRepository;
 use App\Repositories\Quiztitle\QuiztitleRepository;
-use App\Http\Requests\QuestionRequest;
+use App\Repositories\Result\ResultRepository;
 
-class QuestionController extends Controller
+use App\Http\Requests\ResultRequest;
+
+class ResultController extends Controller
 {
-    public function __construct(QuestionRepository $question,QuiztitleRepository $quiz_title){
+    public function __construct(ResultRepository $result,QuiztitleRepository $quiz_title){
         $this->middleware('auth');
-        $this->question = $question;
+        $this->result = $result;
         $this->quiz_title = $quiz_title;    
 
     }
@@ -23,8 +24,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $question_data = $this->question->getAllQuestion(); 
-        return view('pages.question.index',compact('question_data'));
+        $result_data = $this->result->getAllResult(); 
+        return view('pages.result.index',compact('result_data'));
     }
 
     /**
@@ -32,10 +33,10 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         $quiz_title_data = $this->quiz_title->getAllQuiztitle();
-        return view('pages.question.new',compact('quiz_title_data'));
+        return view('pages.result.new',compact('quiz_title_data'));
     }
 
     /**
@@ -44,11 +45,10 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(QuestionRequest $request)
-    {   
-
-        $question_data = $this->question->createQuestion($request->all(),'question');
-        return redirect('question')->with('status', 'Question is successfully created!');
+    public function store(ResultRequest $request)
+    {
+        $result_data = $this->result->createResult($request->all(),'result');
+        return redirect('result')->with('status', 'Result is successfully created!');
     }
 
     /**
@@ -59,8 +59,8 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        $question = $this->question->findOrThrowException($id);
-        return view('pages.question.show',compact('question'));
+        $result = $this->result->findOrThrowException($id);
+        return view('pages.result.show',compact('result'));
     }
 
     /**
@@ -72,9 +72,9 @@ class QuestionController extends Controller
     public function edit($id)
     {
         $quiz_title_data = $this->quiz_title->getAllQuiztitle();
-        $question = $this->question->findOrThrowException($id);
+        $result = $this->result->findOrThrowException($id);
 
-        return view('pages.question.edit',compact('quiz_title_data','question'));
+        return view('pages.result.edit',compact('quiz_title_data','result'));
     }
 
     /**
@@ -84,10 +84,10 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(QuestionRequest $request, $id)
+    public function update(ResultRequest $request, $id)
     {
-        $this->question->update($id, $request->all());
-        return redirect()->route('question.index')->with('status','Question has been updated successfully');
+        $this->result->update($id, $request->all());
+        return redirect()->route('result.index')->with('status','Result has been updated successfully');
     }
 
     /**
@@ -98,7 +98,7 @@ class QuestionController extends Controller
      */
     public function destroy($id)
     {
-        $question = $this->question->destroyQuestion($id);
-        return redirect()->route('question.index')->with('status','Question has been destroyed');
+        $this->result->destroyResult($id);
+        return redirect()->route('result.index')->with('status','Result has been destroyed');
     }
 }

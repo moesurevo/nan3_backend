@@ -52,7 +52,7 @@
 
 	        if ($question->update($input)) {
 	          	$question->serial_no         = $input['serial_no'];
-		        $question->quiztitleid      = $input['category_id'];
+		        $question->quiztitleid      = $input['quiztitleid'];
 		        $question->questioneng      = $input['questioneng'];
 		        $question->questionmm      	= $input['questionmm'];
 	          	$question->save();

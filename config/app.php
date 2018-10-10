@@ -177,6 +177,7 @@ return [
             Custom Service
         */
         Collective\Html\HtmlServiceProvider::class,
+        Yajra\DataTables\DataTablesServiceProvider::class,
 
     ],
 

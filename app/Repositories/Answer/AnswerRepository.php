@@ -74,8 +74,8 @@
 	    }
 
 	    public function destroyAnswer($id){
-	    	$category = $this->findOrThrowException($id);
-	    	if ($category->delete()) {
+	    	$answer = $this->findOrThrowException($id);
+	    	if ($answer->delete()) {
            		return true;
         	}
 	    }

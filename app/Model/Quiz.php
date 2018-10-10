@@ -12,4 +12,8 @@ class Quiz extends Model
         return $this->belongsTo('App\Model\Question');
 
     }
+
+    public function result(){
+    	return $this->belongsTo('App\Model\Result');
+    }
 }

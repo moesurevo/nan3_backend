@@ -39,7 +39,9 @@
 	                    				<td>
 	                    					<a class="btn btn-xs bg-orange" href="{{url('answer/'.$row->id)}}"><i class="fa fa-eye"></i> Detail</a>
 	                    					<a class="btn btn-xs btn-info" href="{{url('answer/'.$row->id.'/edit')}}"><i class="fa fa-edit"></i> Edit</a>
-				    						<a data-href="{{ url('answer/delete/'.$row->id) }}" class="btn btn-xs bg-maroon" onclick="confirm($(this))" data-delete-content='answer'><i class="fa fa-trash"></i> Delete</a>
+				    						{{ Form::open(array('method' => 'DELETE', 'route' => array('answer.destroy', $row->id), 'style'=>'display: inline')) }}
+				                    		<button type="button" class="btn btn-xs bg-maroon delete" value="x" data-placement="top" data-original-title="Delete"><i class="fa fa-trash-o icon-white"></i> Delete </button>
+				                    		{{ Form::close() }}
 	                    				</td>
 				        				
 				        			</tr>

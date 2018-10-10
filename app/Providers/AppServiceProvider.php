@@ -40,6 +40,10 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Replier\ReplierRepository::class
         );
         $this->app->bind(
+            \App\Repositories\Result\ResultInterface::class,
+            \App\Repositories\Result\ResultRepository::class
+        );
+        $this->app->bind(
             \App\Repositories\User\UserInterface::class,
             \App\Repositories\User\UserRepository::class
         );

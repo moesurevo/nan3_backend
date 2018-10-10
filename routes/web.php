@@ -22,3 +22,4 @@ Route::get('/replier', 'ReplierController@index')->name('replier');
 Route::resource('quiz_title', 'QuiztitleController');
 Route::resource('question','QuestionController');
 Route::resource('answer','AnswerController');
+Route::resource('result','ResultController');

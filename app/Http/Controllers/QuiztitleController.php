@@ -94,8 +94,7 @@ class QuiztitleController extends Controller
      */
     public function destroy($id)
     {
-        die();
-        // $quiztitle = $this->quiztitle->destroyQuiztitle($id);
-        // return redirect()->route('quiz_title.index')->with('status','Quiz title has been destroyed');
+        $quiztitle = $this->quiz_title->destroyQuiztitle($id);
+        return redirect()->route('quiz_title.index')->with('status','Quiz title has been destroyed');
     }
 }

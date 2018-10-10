@@ -17,5 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('questionaire','TaskController@index');
+Route::get('get_all_records','API\NAN3Controller@get_all_records');
 

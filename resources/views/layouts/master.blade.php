@@ -9,6 +9,7 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
  <meta name="csrf-token" content="{!! csrf_token() !!}">
   <link rel="stylesheet" href="/css/app.css">
+  <script type="text/javascript" src="/js/app.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +34,7 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     
-     @yield('content')
+    @yield('content')
   </div>
 
  
@@ -47,9 +48,7 @@
   <div class="control-sidebar-bg"></div>
 </div>
 
-<script type="text/javascript" src="/js/app.js"></script>
 <script type="text/javascript" src="/js/custom.js"></script>
-<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js'></script>
 <!-- ./wrapper -->
 </body>
 </html>

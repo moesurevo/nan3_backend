@@ -10,7 +10,7 @@ use App\Http\Requests\AnswerRequest;
 class AnswerController extends Controller
 {
 
-    public function __construct(QuestionRepository $question,answerRepository $answer){
+    public function __construct(QuestionRepository $question,AnswerRepository $answer){
         $this->middleware('auth');
         $this->question = $question;
         $this->answer = $answer;    
@@ -98,6 +98,7 @@ class AnswerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $answer = $this->answer->destroyAnswer($id);
+        return redirect()->route('answer.index')->with('status','Answer has been destroyed');
     }
 }
