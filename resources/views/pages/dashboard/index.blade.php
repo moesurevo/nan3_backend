@@ -17,7 +17,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>{{count($quiz_title_data}}</h3>
+              <h3>{!!count($quiz_title_data)!!}</h3>
 
               <p>New Orders</p>
             </div>
@@ -47,7 +47,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>{{count($user_data)}}</h3>
+              <h3>{!!count($user_data)!!}</h3>
 
               <p>User Registrations</p>
             </div>

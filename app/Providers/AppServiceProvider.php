@@ -28,12 +28,12 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Quiztitle\QuiztitleRepository::class
         );
         $this->app->bind(
-            \App\Repositories\Subcategory\SubcategoryInterface::class,
-            \App\Repositories\Subcategory\SubcategoryRepository::class
+            \App\Repositories\Question\QuestionInterface::class,
+            \App\Repositories\Question\QuestionRepository::class
         );
         $this->app->bind(
-            \App\Repositories\Quiz\QuizInterface::class,
-            \App\Repositories\Quiz\QuizRepository::class
+            \App\Repositories\Answer\AnswerInterface::class,
+            \App\Repositories\Answer\AnswerRepository::class
         );
         $this->app->bind(
             \App\Repositories\Replier\ReplierInterface::class,

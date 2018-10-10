@@ -7,7 +7,7 @@
 					<div class="box-header">
     					<h3 class="box-title">Quiz Title List</h3>
 		                <div class="box-tools pull-right">
-		                        <a href="{!! url('category/create') !!}" class="btn btn-md btn-info">Create</a>
+		                        <a href="{!! url('quiz_title/create') !!}" class="btn btn-md btn-info">Create</a>
 		                </div>
 			        </div>
 			        <div class="box-body">
@@ -34,9 +34,9 @@
 				        				<td> {!! $row->title_no !!} </td>
 	                    				<td> {!! $row->titleeng !!} </td>
 	                    				<td>
-	                    					<a class="btn btn-xs bg-orange" href="{{url('category/'.$row->id)}}"><i class="fa fa-eye"></i> Detail</a>
-	                    					<a class="btn btn-xs btn-info" href="{{url('category/'.$row->id.'/edit')}}"><i class="fa fa-edit"></i> Edit</a>
-				    						<a data-href="{{ url('category/delete/'.$row->id) }}" class="btn btn-xs bg-maroon" onclick="confirm($(this))" data-delete-content='category'><i class="fa fa-trash"></i> Delete</a>
+	                    					<a class="btn btn-xs bg-orange" href="{{url('quiz_title/'.$row->id)}}"><i class="fa fa-eye"></i> Detail</a>
+	                    					<a class="btn btn-xs btn-info" href="{{url('quiz_title/'.$row->id.'/edit')}}"><i class="fa fa-edit"></i> Edit</a>
+				    						<a data-href="{{ url('quiz_title/delete/'.$row->id) }}" class="btn btn-xs bg-maroon" onclick="confirm($(this))" data-delete-content='quiz_title'><i class="fa fa-trash"></i> Delete</a>
 	                    				</td>
 				        				
 				        			</tr>

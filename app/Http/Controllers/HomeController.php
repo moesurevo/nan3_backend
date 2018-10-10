@@ -32,7 +32,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $quiz_title_data = $this->category->getAllQuiztitle(); 
+        $quiz_title_data = $this->quiz_title->getAllQuiztitle(); 
         $user_data = $this->user->getAllUser();
         return view('pages.dashboard.index',compact('quiz_title_data','user_data'));
     }

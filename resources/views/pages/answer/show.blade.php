@@ -5,29 +5,29 @@
 			<div class="col-xs-8">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">Quiz Detail</h3>
+						<h3 class="box-title">Answer Detail</h3>
 					</div>
 					<div class="box-body no-padding">
 						<table class="table table-striped">
 							<tr>
 								<th>  Serial No  </th>
-								<td> {!!$quiz->serial_no!!}</td>
+								<td> {!!$answer->serial_no!!}</td>
 							</tr>
 							<tr>
-								<th> Category  </th>
-								<td> {!!$quiz->sub_category->title!!}</td>
+								<th> Question  </th>
+								<td> {!!$answer->question->questioneng!!}</td>
 							</tr>
 							<tr>
-								<th> Marks  </th>
-								<td> {!!$quiz->marks!!}</td>
+								<th> Point  </th>
+								<td> {!!$answer->point!!}</td>
 							</tr>
 							<tr>
-								<th> <small class="label bg-blue">EN</small> Content </th>
-								<td> {!!$quiz->content!!}</td>
+								<th> <small class="label bg-blue">EN</small> Answer </th>
+								<td> {!!$answer->answereng!!}</td>
 							</tr>
 							<tr>
-								<th> <small class="label bg-green">MM</small> Content  </th>
-								<td> {!!$quiz->mm_content!!}</td>
+								<th> <small class="label bg-green">MM</small> Answer  </th>
+								<td> {!!$answer->answermm!!}</td>
 							</tr>
 						</table>
 

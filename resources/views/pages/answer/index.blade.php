@@ -5,9 +5,9 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-    					<h3 class="box-title">Quiz List</h3>
+    					<h3 class="box-title">Answer List</h3>
 		                <div class="box-tools pull-right">
-		                        <a href="{!! url('quiz/create') !!}" class="btn btn-md btn-info">Create</a>
+		                        <a href="{!! url('answer/create') !!}" class="btn btn-md btn-info">Create</a>
 		                </div>
 			        </div>
 			        <div class="box-body">
@@ -25,21 +25,21 @@
 			        			<tr>
 			        				<th>No.</th>
 			        				<th> Serial No.</th>
-					                <th> Marks </th>
+					                <th> Point </th>
 					                <th> Action </th>
 			        			</tr>
 			        		</thead>
 			        		<tbody>
 			        			<?php $i= 0 ?>
-			        			@foreach ($quiz_data as $row)
+			        			@foreach ($answer_data as $row)
 				        			<tr>
 				        				<td>{!! ++$i!!}</td>
 				        				<td> {!! $row->serial_no !!} </td>
-	                    				<td> {!! $row->marks !!} </td>
+	                    				<td> {!! $row->point !!} </td>
 	                    				<td>
-	                    					<a class="btn btn-xs bg-orange" href="{{url('quiz/'.$row->id)}}"><i class="fa fa-eye"></i> Detail</a>
-	                    					<a class="btn btn-xs btn-info" href="{{url('quiz/'.$row->id.'/edit')}}"><i class="fa fa-edit"></i> Edit</a>
-				    						<a data-href="{{ url('quiz/delete/'.$row->id) }}" class="btn btn-xs bg-maroon" onclick="confirm($(this))" data-delete-content='quiz'><i class="fa fa-trash"></i> Delete</a>
+	                    					<a class="btn btn-xs bg-orange" href="{{url('answer/'.$row->id)}}"><i class="fa fa-eye"></i> Detail</a>
+	                    					<a class="btn btn-xs btn-info" href="{{url('answer/'.$row->id.'/edit')}}"><i class="fa fa-edit"></i> Edit</a>
+				    						<a data-href="{{ url('answer/delete/'.$row->id) }}" class="btn btn-xs bg-maroon" onclick="confirm($(this))" data-delete-content='answer'><i class="fa fa-trash"></i> Delete</a>
 	                    				</td>
 				        				
 				        			</tr>

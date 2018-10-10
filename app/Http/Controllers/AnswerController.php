@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\Subcategory\SubcategoryRepository;
-use App\Repositories\Quiz\QuizRepository;
-use App\Http\Requests\QuizRequest;
+use App\Repositories\Question\QuestionRepository;
+use App\Repositories\Answer\AnswerRepository;
+use App\Http\Requests\AnswerRequest;
 
-class QuizController extends Controller
+class AnswerController extends Controller
 {
 
-    public function __construct(SubcategoryRepository $sub_category,QuizRepository $quiz){
+    public function __construct(QuestionRepository $question,answerRepository $answer){
         $this->middleware('auth');
-        $this->sub_category = $sub_category;
-        $this->quiz = $quiz;    
+        $this->question = $question;
+        $this->answer = $answer;    
 
     }
     /**
@@ -23,8 +23,8 @@ class QuizController extends Controller
      */
     public function index()
     {
-        $quiz_data = $this->quiz->getAllQuiz(); 
-        return view('pages.quiz.index',compact('quiz_data'));
+        $answer_data = $this->answer->getAllAnswer(); 
+        return view('pages.answer.index',compact('answer_data'));
         
     }
 
@@ -35,8 +35,8 @@ class QuizController extends Controller
      */
     public function create()
     {
-        $sub_category_data = $this->sub_category->getAllSubcategory();
-        return view('pages.quiz.new',compact('sub_category_data'));
+        $question_data = $this->question->getAllQuestion();
+        return view('pages.answer.new',compact('question_data'));
     }
 
     /**
@@ -45,10 +45,10 @@ class QuizController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(QuizRequest $request)
+    public function store(AnswerRequest $request)
     {
-        $quiz_data = $this->quiz->createQuiz($request->all(),'quiz');
-        return redirect('quiz')->with('status', 'Quiz is successfully created!');
+        $answer_data = $this->answer->createAnswer($request->all(),'answer');
+        return redirect('answer')->with('status', 'Answer is successfully created!');
     }
 
     /**
@@ -59,8 +59,8 @@ class QuizController extends Controller
      */
     public function show($id)
     {
-        $quiz = $this->quiz->findOrThrowException($id);
-        return view('pages.quiz.show',compact('quiz'));
+        $answer = $this->answer->findOrThrowException($id);
+        return view('pages.answer.show',compact('answer'));
     }
 
     /**
@@ -71,10 +71,10 @@ class QuizController extends Controller
      */
     public function edit($id)
     {
-        $sub_category_data = $this->sub_category->getAllSubcategory();
-        $quiz = $this->quiz->findOrThrowException($id);
+        $question_data = $this->question->getAllQuestion();
+        $answer = $this->answer->findOrThrowException($id);
 
-        return view('pages.quiz.edit',compact('sub_category_data','quiz'));
+        return view('pages.answer.edit',compact('question_data','answer'));
     }
 
     /**
@@ -84,10 +84,10 @@ class QuizController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(QuizRequest $request, $id)
+    public function update(AnswerRequest $request, $id)
     {
-        $this->quiz->update($id, $request->all());
-        return redirect()->route('quiz.index')->with('status','Quiz has been updated successfully');
+        $this->answer->update($id, $request->all());
+        return redirect()->route('answer.index')->with('status','Answer has been updated successfully');
     }
 
     /**

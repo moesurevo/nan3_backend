@@ -8,9 +8,9 @@
         <li class="header">MAIN NAVIGATION</li>
        
         <li><a href="{!!'/home'!!}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        <li><a href="{!!'/category'!!}"><i class="fa fa-sticky-note text-green"></i> <span>Category</span></a></li>
-        <li><a href="{!!'/sub_category'!!}"><i class="fa fa-circle-o text-aqua"></i> <span>Sub Category</span></a></li>
-        <li><a href="{!!'/quiz'!!}"><i class="fa fa-book text-yellow"></i> <span>Quiz</span></a></li>
+        <li><a href="{!!'/quiz_title'!!}"><i class="fa fa-sticky-note text-green"></i> <span>Quiz Title</span></a></li>
+        <li><a href="{!!'/question'!!}"><i class="fa fa-circle-o text-aqua"></i> <span>Question</span></a></li>
+        <li><a href="{!!'/answer'!!}"><i class="fa fa-book text-yellow"></i> <span>Answer</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

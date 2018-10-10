@@ -1,50 +1,50 @@
-@if(isset($quiz))
-    {!! Form::model($quiz, ['route' => ['quiz.update', $quiz->id],  'method' => 'PATCH']) !!}
+@if(isset($answer))
+    {!! Form::model($answer, ['route' => ['answer.update', $answer->id],  'method' => 'PATCH']) !!}
 @else
-    {!! Form::open(array( 'url' => 'quiz')) !!} 
+    {!! Form::open(array( 'url' => 'answer')) !!} 
 @endif
 
 	<div class="box-body">
 
 		<div class="form-group {!! $errors->has('serial_no') ? 'has-error' : '' !!}">
 			<label for="eng_title_no"> Serial No</label>
-			<input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Serial No" name="serial_no" value="{!! isset($quiz) ? $quiz['serial_no'] : 0!!}" min="0">
+			<input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Serial No" name="serial_no" value="{!! isset($answer) ? $answer['serial_no'] : 0!!}" min="0">
 		</div>
 
-		<div class="form-group {!! $errors->has('sub_category_id') ? 'has-error' : '' !!}">
-			<label for="sub_category_id"> Sub Category </label>
-			<select class="form-control" name="sub_category_id">
-				<option value="">--- Select State ---</option>
-				@if(!empty($sub_category_data))
-				  	@foreach($sub_category_data as $key)
-				    	<option value="{{ $key->id }}" {!! isset($quiz) && $quiz->sub_category_id == $key->id ? 'selected' : ''!!}>{{ $key->title }}</option>
+		<div class="form-group {!! $errors->has('questionid') ? 'has-error' : '' !!}">
+			<label for="questionid"> Question </label>
+			<select class="form-control" name="questionid">
+				<option value="">--- Select Question ---</option>
+				@if(!empty($question_data))
+				  	@foreach($question_data as $key)
+				    	<option value="{{ $key->id }}" {!! isset($answer) && $answer->questionid == $key->id ? 'selected' : ''!!}>{{ $key->questioneng }}</option>
 				  	@endforeach
 				@endif
 			</select>
 		</div>
 
 
-		<div class="form-group {!! $errors->has('content') ? 'has-error' : '' !!}">
-			<label for="eng_content"><small class="label bg-blue">EN</small> Content</label>
-			<textarea class="form-control" placeholder="Enter content" name="content">{!! isset($quiz) ? $quiz['content'] : old('content')!!}</textarea>
-			@if ($errors->has('content'))
-            	<span class="help-block">{{ $errors->first('content') }}</span>
+		<div class="form-group {!! $errors->has('answereng') ? 'has-error' : '' !!}">
+			<label for="answereng"><small class="label bg-blue">EN</small> Answer</label>
+			<textarea class="form-control" placeholder="Enter answereng" name="answereng">{!! isset($answer) ? $answer['answereng'] : old('answereng')!!}</textarea>
+			@if ($errors->has('answereng'))
+            	<span class="help-block">{{ $errors->first('answereng') }}</span>
           	@endif
 		</div>
 
-		<div class="form-group {!! $errors->has('mm_content') ? 'has-error' : '' !!}">
-			<label for="mm_content"><small class="label bg-green">MM</small> Title</label>
-			<textarea class="form-control" placeholder="Enter Title" name="mm_content">{!! isset($quiz) ? $quiz['mm_content'] : old('mm_content')!!}</textarea>
-			@if ($errors->has('mm_content'))
-            	<span class="help-block">{{ $errors->first('mm_content') }}</span>
+		<div class="form-group {!! $errors->has('answermm') ? 'has-error' : '' !!}">
+			<label for="answermm"><small class="label bg-green">MM</small> Answer</label>
+			<textarea class="form-control" placeholder="Enter Title" name="answermm">{!! isset($answer) ? $answer['answermm'] : old('answermm')!!}</textarea>
+			@if ($errors->has('answermm'))
+            	<span class="help-block">{{ $errors->first('answermm') }}</span>
           	@endif
 		</div>
 
-		<div class="form-group {!! $errors->has('marks') ? 'has-error' : '' !!}">
-			<label for="eng_title_no"> Marks</label>
-			<input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Serial No" name="marks" value="{!! isset($quiz) ? $quiz['marks'] : 1!!}" min="1">
-			@if ($errors->has('marks'))
-            	<span class="help-block">{{ $errors->first('marks') }}</span>
+		<div class="form-group {!! $errors->has('point') ? 'has-error' : '' !!}">
+			<label for="eng_title_no"> Point</label>
+			<input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Point" name="point" value="{!! isset($answer) ? $answer['point'] : 1!!}" min="1">
+			@if ($errors->has('point'))
+            	<span class="help-block">{{ $errors->first('point') }}</span>
           	@endif
 		</div>
 

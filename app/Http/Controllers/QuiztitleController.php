@@ -21,7 +21,7 @@ class QuiztitleController extends Controller
      */
     public function index()
     {
-        $quiz_title_data = $this->category->getAllQuiztitle(); 
+        $quiz_title_data = $this->quiz_title->getAllQuiztitle(); 
         return view('pages.quiz_title.index',compact('quiz_title_data'));
     }
 
@@ -44,7 +44,7 @@ class QuiztitleController extends Controller
     public function store(QuiztitleRequest $request)
     {   
 
-        $category_data = $this->quiz_title->createQuiztitle($request->all(),'quiz_title');
+        $quiz_title = $this->quiz_title->createQuiztitle($request->all(),'quiz_title');
         return redirect('quiz_title')->with('status', 'Quiz title is successfully created!');
     }
 
@@ -57,7 +57,7 @@ class QuiztitleController extends Controller
     public function show($id)
     {
         $quiz_title = $this->quiz_title->findOrThrowException($id);
-        return view('pages.quiz_title.show')->withQuiztitle($quiz_title);
+        return view('pages.quiz_title.show',compact('quiz_title'));
     }
 
     /**
@@ -70,7 +70,7 @@ class QuiztitleController extends Controller
     {
         $quiz_title = $this->quiz_title->findOrThrowException($id);
 
-        return view('pages.quiz_title.edit')->withQuiztitle($quiz_title);
+        return view('pages.quiz_title.edit',compact('quiz_title'));
     }
 
     /**
@@ -95,7 +95,7 @@ class QuiztitleController extends Controller
     public function destroy($id)
     {
         die();
-        // $category = $this->category->destroyQuiztitle($id);
-        // return redirect()->route('category.index')->with('status','Category has been destroyed');
+        // $quiztitle = $this->quiztitle->destroyQuiztitle($id);
+        // return redirect()->route('quiz_title.index')->with('status','Quiz title has been destroyed');
     }
 }

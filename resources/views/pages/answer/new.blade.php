@@ -7,7 +7,7 @@
 					<div class="box-header with-border">
 						<h3 class="box-title">Create Quiz</h3>
 					</div>
-					@include('pages.quiz.form')
+					@include('pages.answer.form')
 				</div>
 			</div>
 		</div>

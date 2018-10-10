@@ -19,6 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/replier', 'ReplierController@index')->name('replier');
-Route::resource('quiztitle', 'QuiztitleController');
-Route::resource('sub_category','SubcategoryController');
-Route::resource('quiz','QuizController');
+Route::resource('quiz_title', 'QuiztitleController');
+Route::resource('question','QuestionController');
+Route::resource('answer','AnswerController');

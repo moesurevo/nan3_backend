@@ -47,8 +47,8 @@
 
 	          	$quiz_title->title_no         = $input['title_no'];
 		        $quiz_title->mm_title_no      = $input['mm_title_no'];
-		        $quiz_title->title      		= $input['title'];
-		        $quiz_title->mm_title      	= $input['mm_title'];
+		        $quiz_title->titleeng      		= $input['titleeng'];
+		        $quiz_title->titlemm      	= $input['titlemm'];
 	          	$quiz_title->save();
 
 	          return true;

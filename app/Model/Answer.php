@@ -9,7 +9,7 @@ class Answer extends Model
     protected $fillable = ['questionid', 'answereng','answermm','point'];
     public function question()
     {
-        return $this->belongsTo('App\Model\Question');
+        return $this->belongsTo('App\Model\Question','questionid');
 
     }
 }

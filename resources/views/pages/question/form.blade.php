@@ -12,12 +12,12 @@
 		</div>
 
 		<div class="form-group {!! $errors->has('quiztitleid') ? 'has-error' : '' !!}">
-			<label for="quiztitleid"> Category </label>
+			<label for="quiztitleid"> Quiz Title </label>
 			<select class="form-control" name="quiztitleid">
 				<option value="">--- Select State ---</option>
-				@if(!empty($category_data))
-				  	@foreach($category_data as $key)
-				    	<option value="{{ $key->id }}" {!! isset($question) && $question->quiztitleid == $key->id ? 'selected' : ''!!}>{{ $key->title }}</option>
+				@if(!empty($quiz_title_data))
+				  	@foreach($quiz_title_data as $key)
+				    	<option value="{{ $key->id }}" {!! isset($question) && $question->quiztitleid == $key->id ? 'selected' : ''!!}>{{ $key->titleeng }}</option>
 				  	@endforeach
 				@endif
 			</select>

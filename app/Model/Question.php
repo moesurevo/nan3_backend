@@ -10,12 +10,12 @@ class Question extends Model
 
     public function quiztitle()
     {
-        return $this->belongsTo('App\Model\Quiztitle');
+        return $this->belongsTo('App\Model\Quiztitle','quiztitleid');
 
     }
 
-    public function quiz(){
+    public function answer(){
 
-    	return $this->hasMany('App\Model\Quiz');
+    	return $this->hasMany('App\Model\Answer');
     }
 }
