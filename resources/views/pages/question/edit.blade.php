@@ -5,9 +5,9 @@
 			<div class="col-md-6">
 				<div class="box box-primary">
 					<div class="box-header with-border">
-						<h3 class="box-title">Edit Quiz</h3>
+						<h3 class="box-title">Edit Question</h3>
 					</div>
-					@include('pages.quiz.form')
+					@include('pages.question.form')
 				</div>
 			</div>
 		</div>

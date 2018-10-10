@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryRequest extends FormRequest
+class QuiztitleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,8 +26,8 @@ class CategoryRequest extends FormRequest
         return [
             'title_no' => 'required',
             'mm_title_no' => 'required',
-            'title' => 'required',
-            'mm_title' => 'required',
+            'titleeng' => 'required',
+            'titlemm' => 'required',
         ];
     }
 }

@@ -11,19 +11,19 @@
 						<table class="table table-striped">
 							<tr>
 								<th> <small class="label bg-blue">EN</small> Title No  </th>
-								<td> {!!$category->title_no!!}</td>
+								<td> {!!$quiz_title->title_no!!}</td>
 							</tr>
 							<tr>
 								<th> <small class="label bg-green">MM</small> Title No  </th>
-								<td> {!!$category->mm_title_no!!}</td>
+								<td> {!!$quiz_title->mm_title_no!!}</td>
 							</tr>
 							<tr>
 								<th> <small class="label bg-blue">EN</small> Title </th>
-								<td> {!!$category->titleeng!!}</td>
+								<td> {!!$quiz_title->titleeng!!}</td>
 							</tr>
 							<tr>
 								<th> <small class="label bg-green">MM</small> Title  </th>
-								<td> {!!$category->titlemm!!}</td>
+								<td> {!!$quiz_title->titlemm!!}</td>
 							</tr>
 						</table>
 

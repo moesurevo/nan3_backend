@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quiz extends Model
 {
-	protected $fillable = ['sub_category_id', 'content','mm_content','marks'];
-    public function sub_category()
+	protected $fillable = ['questionid', 'answereng','answermm','answereng'];
+    public function question()
     {
-        return $this->belongsTo('App\Model\Subcategory');
+        return $this->belongsTo('App\Model\Question');
 
     }
 }
