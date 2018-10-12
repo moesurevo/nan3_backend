@@ -10,5 +10,6 @@
 	{
 	    // public function findOrThrowException($id); 
     	public function getAllRepliers($order_by = 'id', $sort = 'asc');
+    	public function createReplier($name,$email,$phone_no);
 	}
 ?>

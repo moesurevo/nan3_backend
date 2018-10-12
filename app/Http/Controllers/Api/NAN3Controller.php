@@ -9,14 +9,16 @@ use App\Repositories\Quiztitle\QuiztitleRepository;
 use App\Repositories\Question\QuestionRepository;
 use App\Repositories\Answer\AnswerRepository;
 use App\Repositories\Result\ResultRepository;
+use App\Repositories\Replier\ReplierRepository;
 
 class NAN3Controller extends APIBaseController
 {
-    public function __construct(QuiztitleRepository $quiz_title,QuestionRepository $question,AnswerRepository $answer,ResultRepository $result){
+    public function __construct(QuiztitleRepository $quiz_title,QuestionRepository $question,AnswerRepository $answer,ResultRepository $result,ReplierRepository $replier){
         $this->quiz_title = $quiz_title;
         $this->question = $question;
         $this->answer = $answer;    
         $this->result = $result;    
+        $this->replier = $replier;
 
     }
 
@@ -34,5 +36,14 @@ class NAN3Controller extends APIBaseController
 		);
 
     	return $this->sendResponse($data, 'All Data retrieved successfully.');
+    }
+
+    public function create_replier(Request $request){
+        $name = $request['name'];
+        $email = $request['email'];
+        $phone_no = $request['phone_no'];
+        $this->replier->createReplier($name,$email,$phone_no);
+
+        return $this->sendResponse($data=null, 'All Data created successfully.');
     }
 }

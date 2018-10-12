@@ -19,6 +19,15 @@
 	        return $this->model->orderBy($order_by, $sort)->get();
 	    }
 
+	    public function createReplier($name,$email,$phone_no){
+	    	$replier               			= new Replier;
+	        $replier->name        			= $name;
+	        $replier->email      			= $email;
+	        $replier->phone_no      		= $phone_no;
+	        $replier->save();
+	        return true;
+	    }
+
 	}
 
 ?>

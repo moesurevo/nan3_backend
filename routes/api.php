@@ -18,4 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('get_all_records','API\NAN3Controller@get_all_records');
+Route::post('create_replier','API\NAN3Controller@create_replier');
 
