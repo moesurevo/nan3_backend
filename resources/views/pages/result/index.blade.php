@@ -5,9 +5,9 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-    					<h3 class="box-title">Answer List</h3>
+    					<h3 class="box-title">Result List</h3>
 		                <div class="box-tools pull-right">
-		                        <a href="{!! url('answer/create') !!}" class="btn btn-md btn-info">Create</a>
+		                        <a href="{!! url('result/create') !!}" class="btn btn-md btn-info">Create</a>
 		                </div>
 			        </div>
 			        <div class="box-body">
@@ -24,24 +24,24 @@
 			        		<thead>
 			        			<tr>
 			        				<th>No.</th>
-			        				<th> Serial No.</th>
-					                <th> Point </th>
-					                <th> Question</th>
+			        				<th> Quiz </th>
+					                <th> Min.point </th>
+					                <th> Max.point </th>
 					                <th> Action </th>
 			        			</tr>
 			        		</thead>
 			        		<tbody>
 			        			<?php $i= 0 ?>
-			        			@foreach ($answer_data as $row)
+			        			@foreach ($result_data as $row)
 				        			<tr>
-				        				<td>{!! ++$i!!}</td>
-				        				<td> {!! $row->serial_no !!} </td>
-	                    				<td> {!! $row->point !!} </td>
-	                    				<td> {!! $row->question->questioneng !!} </td>
+				        				<td>{!! ++$i !!}</td>
+				        				<td>{!! $row->quiztitle->titleeng !!}</td>
+				        				<td> {!! $row->pointminimum !!} </td>
+	                    				<td> {!! $row->pointmaximum !!} </td>
 	                    				<td>
-	                    					<a class="btn btn-xs bg-orange" href="{{url('answer/'.$row->id)}}"><i class="fa fa-eye"></i> Detail</a>
-	                    					<a class="btn btn-xs btn-info" href="{{url('answer/'.$row->id.'/edit')}}"><i class="fa fa-edit"></i> Edit</a>
-				    						{{ Form::open(array('method' => 'DELETE', 'route' => array('answer.destroy', $row->id), 'style'=>'display: inline')) }}
+	                    					<a class="btn btn-xs bg-orange" href="{{url('result/'.$row->id)}}"><i class="fa fa-eye"></i> Detail</a>
+	                    					<a class="btn btn-xs btn-info" href="{{url('result/'.$row->id.'/edit')}}"><i class="fa fa-edit"></i> Edit</a>
+				    						{{ Form::open(array('method' => 'DELETE', 'route' => array('result.destroy', $row->id), 'style'=>'display: inline')) }}
 				                    		<button type="button" class="btn btn-xs bg-maroon delete" value="x" data-placement="top" data-original-title="Delete"><i class="fa fa-trash-o icon-white"></i> Delete </button>
 				                    		{{ Form::close() }}
 	                    				</td>

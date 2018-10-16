@@ -42,7 +42,7 @@
 
 		<div class="form-group {!! $errors->has('point') ? 'has-error' : '' !!}">
 			<label for="eng_title_no"> Point</label>
-			<input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Point" name="point" value="{!! isset($answer) ? $answer['point'] : 1!!}" min="1">
+			<input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Point" name="point" value="{!! isset($answer) ? $answer['point'] : 0!!}" min="0">
 			@if ($errors->has('point'))
             	<span class="help-block">{{ $errors->first('point') }}</span>
           	@endif
