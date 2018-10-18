@@ -11,6 +11,7 @@
         <li class="{!! Request::segment(1) == 'question' ? 'active' : '' !!}"><a href="{!!'/question'!!}"><i class="fa fa-circle-o text-aqua"></i> <span>Question</span></a></li>
         <li class="{!! Request::segment(1) == 'answer' ? 'active' : '' !!}"><a href="{!!'/answer'!!}"><i class="fa fa-book text-yellow"></i> <span>Answer</span></a></li>
         <li class="{!! Request::segment(1) == 'result' ? 'active' : '' !!}"><a href="{!!'/result'!!}"><i class="fa fa-tags text-maroon"></i> <span>Result</span></a></li>
+        <li class="{!! Request::segment(1) == 'replier' ? 'active' : '' !!}"><a href="{!!'/replier'!!}"><i class="fa fa-users text-purple"></i> <span>Replier</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
