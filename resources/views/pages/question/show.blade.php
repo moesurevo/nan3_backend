@@ -25,6 +25,17 @@
 								<th> <small class="label bg-green">MM</small> Question  </th>
 								<td> {!!$question->questionmm!!}</td>
 							</tr>
+							<tr>
+								<th> Multiple Select  </th>
+									<?php 
+										if($question->multiple_select == 0){
+											$multiple_select = 'false';
+										}else{
+											$multiple_select = 'true';
+										}
+									 ?>
+								<td> {!!$multiple_select!!}</td>
+							</tr>
 						</table>
 
 						<div>

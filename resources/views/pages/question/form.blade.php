@@ -40,9 +40,30 @@
           	@endif
 		</div>
 
+
+		<div class="form-group {!! $errors->has('multiple_select') ? 'has-error' : '' !!}">
+			<div class="checkbox">
+				<label>
+	                <input type="checkbox" name="multiple_select" value="{!! isset($question) ? $question['multiple_select'] : 0!!}" id="multiple_select" {!! isset($question) && $question['multiple_select']==1 ? 'checked' : ''!!}> Multiple Select
+	            </label>
+            </div>
+		</div>
+
+
 	</div>
 	<div class="box-footer">
 	    <button type="submit" class="btn btn-primary">Submit</button>
 	    <button type="button" class="btn btn-danger bg-red" onclick="goBack()"> Back</button>
 	</div>
 {!! Form::close() !!}
+
+<script type="text/javascript">
+	$('#multiple_select').click(function(){
+		if ($('#multiple_select').is(':checked')) {
+			$('#multiple_select').val(1);
+		}else{
+			$('#multiple_select').val(0);
+			$("#multiple_select").removeAttr('checked');
+		}
+	})
+</script>

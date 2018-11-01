@@ -30,11 +30,16 @@
 
 	    public function createQuestion($input,$type)
 	    {
+	    	$multiple_select = 0;
+	    	if(isset($input['multiple_select'])){
+	        		$multiple_select = $input['multiple_select'];
+	        }
 	        $question               	= new Question;
 	        $question->serial_no        = $input['serial_no'];
 	        $question->quiztitleid      = $input['quiztitleid'];
 	        $question->questioneng      		= $input['questioneng'];
 	        $question->questionmm      	= $input['questionmm'];
+	        $question->multiple_select  =$multiple_select;
 	        $question->save();
 	        
 	        if($question->serial_no != 0){
@@ -49,12 +54,16 @@
 	    public function update($id, $input)
 	    {
 	        $question = $this->findOrThrowException($id);
-
+	        $multiple_select = 0;
 	        if ($question->update($input)) {
+	        	if(isset($input['multiple_select'])){
+	        		$multiple_select = $input['multiple_select'];
+	        	}
 	          	$question->serial_no         = $input['serial_no'];
 		        $question->quiztitleid      = $input['quiztitleid'];
 		        $question->questioneng      = $input['questioneng'];
 		        $question->questionmm      	= $input['questionmm'];
+		        $question->multiple_select  =$multiple_select;
 	          	$question->save();
 
 	          	if($question->serial_no != 0){
