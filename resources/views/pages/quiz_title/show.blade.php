@@ -25,6 +25,14 @@
 								<th> <small class="label bg-green">MM</small> Title  </th>
 								<td> {!!$quiz_title->titlemm!!}</td>
 							</tr>
+							<tr>
+								<th> <small class="label bg-blue">EN</small> Promo </th>
+								<td> {!!$quiz_title->promoeng!!}</td>
+							</tr>
+							<tr>
+								<th> <small class="label bg-green">MM</small> Promo  </th>
+								<td> {!!$quiz_title->promomm!!}</td>
+							</tr>
 						</table>
 
 						<div>

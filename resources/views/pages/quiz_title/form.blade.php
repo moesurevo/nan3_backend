@@ -37,6 +37,22 @@
           	@endif
 		</div>
 
+		<div class="form-group {!! $errors->has('promoeng') ? 'has-error' : '' !!}">
+			<label for="promoeng"><small class="label bg-blue">EN</small> Promo</label>
+			<textarea class="form-control" placeholder="Enter Promo Eng" name="promoeng">{!! isset($quiz_title) ? $quiz_title['promoeng'] : old('promoeng')!!}</textarea>
+			@if ($errors->has('promoeng'))
+            	<span class="help-block">{{ $errors->first('promoeng') }}</span>
+          	@endif
+		</div>
+
+		<div class="form-group {!! $errors->has('promomm') ? 'has-error' : '' !!}">
+			<label for="promomm"><small class="label bg-green">MM</small> Promo</label>
+			<textarea class="form-control" placeholder="Enter Promo MM" name="promomm">{!! isset($quiz_title) ? $quiz_title['promomm'] : old('promomm')!!}</textarea>
+			@if ($errors->has('promomm'))
+            	<span class="help-block">{{ $errors->first('promomm') }}</span>
+          	@endif
+		</div>
+
 	</div>
 	<div class="box-footer">
 	    <button type="submit" class="btn btn-primary">Submit</button>

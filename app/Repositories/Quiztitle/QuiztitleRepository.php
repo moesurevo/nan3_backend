@@ -35,6 +35,8 @@
 	        $quiz_title->mm_title_no      = $input['mm_title_no'];
 	        $quiz_title->titlemm  		= $input['titlemm'];
 	        $quiz_title->titleeng      	= $input['titleeng'];
+	        $quiz_title->promomm  		= $input['promomm'];
+	        $quiz_title->promoeng      	= $input['promoeng'];
 	        $quiz_title->save();
 	        return true;
 	    }
@@ -49,6 +51,8 @@
 		        $quiz_title->mm_title_no      = $input['mm_title_no'];
 		        $quiz_title->titleeng      		= $input['titleeng'];
 		        $quiz_title->titlemm      	= $input['titlemm'];
+		        $quiz_title->promomm  		= $input['promomm'];
+	        	$quiz_title->promoeng      	= $input['promoeng'];
 	          	$quiz_title->save();
 
 	          return true;

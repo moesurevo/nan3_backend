@@ -28,6 +28,8 @@ class QuiztitleRequest extends FormRequest
             'mm_title_no' => 'required',
             'titleeng' => 'required',
             'titlemm' => 'required',
+            'promomm' => 'required',
+            'promoeng' => 'required',
         ];
     }
 }
